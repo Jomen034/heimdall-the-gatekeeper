@@ -1,0 +1,14 @@
+activate zookeeper
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+kafka
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+consumer
+.\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic Heimdall
+
+producer
+.\bin\windows\kafka-console-consumer.bat --broker-list localhost:9092 --topic Heimdall
+
+create topic
+.\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic <your topic name>
