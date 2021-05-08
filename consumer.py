@@ -12,4 +12,5 @@ for message in consumer:
     print(message.value)
     activities = json.loads(message.value)
     for activity in activities['activities']:
-        tables = 
+        if activity['operation'] == 'insert':
+            if
